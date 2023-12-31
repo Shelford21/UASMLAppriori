@@ -61,8 +61,7 @@ Mengunzip dataset
 
 ## Import Library
 
-Mengimpor Library yang dibutuhkan yakni matplotlib , seaborn ,pandas dan
-numpy
+Mengimpor Library yang dibutuhkan
 
 ``` python
 import numpy as np
