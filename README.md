@@ -94,7 +94,7 @@ Memeriksa berapa baris dan kolom
 df.shape
 ```
 
-Mengetahui deskripsi pada data
+Mengetahui statistika pada data
 
 ``` python
 
