@@ -49,14 +49,14 @@ Selanjutnya membuat direktori dan permission pada skrip ini
 Lalu mendownload dataset tersebut
 
 ``` python
-!kaggle datasets download -d anubhavgoyal10/laptop-prices-dataset/
+!kaggle datasets download -d rashikrahmanpritom/groceries-dataset-for-market-basket-analysismba
 ```
 Mengunzip dataset
 
 ```python
-!mkdir laptop-prices-dataset
-!unzip laptop-prices-dataset.zip -d laptop-prices-dataset
-!ls laptop-prices-dataset
+!mkdir groceries-dataset-for-market-basket-analysismba
+!unzip groceries-dataset-for-market-basket-analysismba.zip -d groceries-dataset-for-market-basket-analysismba
+!ls groceries-dataset-for-market-basket-analysismba
 ```
 
 ## Import Library
