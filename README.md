@@ -59,6 +59,7 @@ Mengunzip dataset
 !ls groceries-dataset-for-market-basket-analysismba
 ```
 
+
 ## Import Library
 
 Mengimpor Library yang dibutuhkan
@@ -75,6 +76,7 @@ import plotly.express as px
 import plotly.figure_factory as ff
 ```
 
+
 ## Data Discovery
 
 Membaca data csv
@@ -86,13 +88,13 @@ df.head()
 ![image](https://github.com/Shelford21/FauzanML/assets/122199835/3c874ef8-84ee-43b7-b7d8-d796200e87e7)
 
 
+
 Memeriksa berapa baris dan kolom
 
 ``` python
 
 df.shape
 ```
-
 Mengetahui statistika pada data
 
 ``` python
@@ -100,7 +102,6 @@ Mengetahui statistika pada data
 df.describe()
 ```
 ![image](https://github.com/Shelford21/UASMLAppriori/assets/122199835/9dd75314-b464-463e-a9c0-04c8e01b321c)
-
 
 
 
