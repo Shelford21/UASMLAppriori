@@ -100,12 +100,16 @@ Mengetahui deskripsi pada data
 
 df.describe()
 ```
+![image](https://github.com/Shelford21/UASMLAppriori/assets/122199835/9dd75314-b464-463e-a9c0-04c8e01b321c)
+
 
 
 
 ``` python
 df.info()
 ```
+![image](https://github.com/Shelford21/UASMLAppriori/assets/122199835/5b240c4a-ef6e-4820-81a5-921cd68396a6)
+
 
 
 
@@ -135,6 +139,7 @@ fig = px.bar(data_frame=freq_items.head(40), title='Top 40 Items', color=freq_it
 fig.update_layout(title_x=0.5, title_y=0.86)
 fig.show()
 ```
+![image](https://github.com/Shelford21/UASMLAppriori/assets/122199835/3659959f-ff43-4b1e-8b38-417c552a4797)
 
 
 Mengetahui Top 25 Groceries yang terbeli
@@ -144,6 +149,8 @@ fig = px.bar(top_25,color=top_25.index, labels={'value':'Quantity Sold','index':
 fig.update_layout(showlegend=False, title_text='Top 25 Groceries Sold',title_x=0.5, title={'font':{'size':20}})
 fig.show()
 ```
+![image](https://github.com/Shelford21/UASMLAppriori/assets/122199835/9416fca9-1b31-4905-948d-a165613c64ee)
+
 
 
 Mengetahui Bottom 25 groceries yang terbeli
@@ -153,6 +160,10 @@ fig = px.bar(bot_25,color=bot_25.index, labels={'value':'Quantity Sold','index':
 fig.update_layout(showlegend=False, title_text='Bottom 25 Groceries Sold',title_x=0.5, title={'font':{'size':20}})
 fig.show()
 ```
+![image](https://github.com/Shelford21/UASMLAppriori/assets/122199835/45733ca5-ec51-4c8a-922b-b770b82cae14)
+
+
+
 
 Mengetahui Top 25 Customer
 ```python
@@ -163,6 +174,8 @@ plt.xlabel('Customer Number', fontsize=15)
 plt.ylabel('Purchase Quantity', fontsize=15)
 plt.show()
 ```
+![image](https://github.com/Shelford21/UASMLAppriori/assets/122199835/374654a7-51ce-4383-b950-05b4c394aa17)
+
 
 Mengetahui frekuensi item terjual
 ```python
@@ -172,6 +185,8 @@ fig.update_layout(title_text='Frequency of the Items Sold', title_x=0.5, title_f
 fig.update_traces(textinfo="label+value")
 fig.show()
 ```
+![image](https://github.com/Shelford21/UASMLAppriori/assets/122199835/1dc5f9be-a9c1-435a-8216-d6d317a5577e)
+
 
 Mengetahui Top 10 produk terjual pada musim panas
 ```python
@@ -181,6 +196,7 @@ fig = px.bar(top_10s,color=top_10s.index, labels={'value':'Quantity Sold','index
 fig.update_layout(showlegend=False, title_text='Top 10 Products Sold',title_x=0.5, title={'font':{'size':20}})
 fig.show()
 ```
+![image](https://github.com/Shelford21/UASMLAppriori/assets/122199835/4616be10-b665-4250-adde-3f28a8353929)
 
 
 
@@ -242,6 +258,8 @@ Menerapkan algoritma apriori
 freq_items = apriori(df_new, min_support=0.05, use_colnames=True, max_len=3).sort_values(by='support')
 freq_items.head(10)
 ```
+![image](https://github.com/Shelford21/UASMLAppriori/assets/122199835/a06ab223-34fa-48db-b844-011cf50d7bba)
+
 
 
 ``` python
@@ -249,6 +267,8 @@ rules=association_rules(freq_items, metric="lift", min_threshold=1).sort_values(
 rules=rules[['antecedents','consequents','support','confidence','lift']]
 rules.head()
 ```
+![image](https://github.com/Shelford21/UASMLAppriori/assets/122199835/3095a4ef-1fe4-4a77-b31b-7c573413ca59)
+
 
 ``` python
 rules['antecedents']=rules['antecedents'].apply(lambda a: ','.join(list(a)))
@@ -282,6 +302,8 @@ fig.update_layout(title_x=0.22, title_y=0.98)
 fig.update_traces(showscale=True)
 fig.show()
 ```
+![newplot](https://github.com/Shelford21/UASMLAppriori/assets/122199835/35ff4f00-543e-4aa7-891f-b8c43a72ccfb)
+
 support suatu item adalah sebagian kecil transaksi dalam kumpulan data transaksi yang memuatnya. support akan menjadi yang tertinggi jika kedua item tersebut disertakan dalam semua transaksi.
 
 support tertinggi yaitu 0,19 dapat diamati antara susu murni dan sayuran lainnya yang menunjukkan bahwa 19% transaksi mengandung susu murni dan sayuran lainnya.
@@ -307,6 +329,8 @@ fig.update_layout(title_x=0.22, title_y=0.98)
 fig.update_traces(showscale=True)
 fig.show()
 ```
+![newplot(1)](https://github.com/Shelford21/UASMLAppriori/assets/122199835/77a11968-ecb6-4b57-b133-fe081e34800e)
+
 confidence tertinggi : 0,6 (antara sayuran lain/air minum kemasan dan susu murni)
 
 confidence terendah : 0,12 (antara sayuran beku dan susu murni)
@@ -334,6 +358,8 @@ fig.update_layout(title_x=0.22, title_y=0.98)
 fig.update_traces(showscale=True)
 fig.show()
 ```
+![newplot(2)](https://github.com/Shelford21/UASMLAppriori/assets/122199835/3844a916-b660-42fb-92e4-70f86bc01d93)
+
 lift >1 : menunjukkan bahwa kehadiran item di sebelah kiri telah meningkatkan kemungkinan munculnya item di sebelah kanan dalam transaksi.
 
 lift <1 : menunjukkan bahwa keberadaan barang-barang di sebelah kiri telah menurunkan kemungkinan munculnya barang-barang di sebelah kanan dalam transaksi.
@@ -346,6 +372,7 @@ Nilai lift terendah : 1,04 antara buah-buahan tropis dengan sayuran lainnya dan 
 
 
 ## Deployment
-![image](https://github.com/Shelford21/FauzanML/assets/122199835/b937ecb4-82a6-4068-9c0d-bc3b03515314)
+![image](https://github.com/Shelford21/UASMLAppriori/assets/122199835/9e3d65dc-82eb-4250-a5a5-9c3b0e573bfa)
 
-[linkStreamlit](https://fauzanml-ambition.streamlit.app/)
+
+[linkStreamlit](https://uasmlappriori-ambition.streamlit.app/)
